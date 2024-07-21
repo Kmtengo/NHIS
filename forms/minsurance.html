@@ -132,55 +132,50 @@
                         </div>
                     </nav>
                     <div class="container">
+                        <!-- <h1 class="text-center mb-4">Counseling Form</h1> -->
+                        <h1 class="text-center mt-4 mb-4">Medical Insurance Form</h1>
 
-                        <h1 class="text-center mb-4">In-Patient Form</h1>
                         <form>
-                            <div class="form-group mb-4">
-                                <label for="firstName">First Name:</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="lastName">Last Name:</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" required>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="age">Age:</label>
-                                <input type="number" class="form-control" id="age" name="age" min="1" max="150" required>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="gender">Gender:</label>
-                                <select class="form-control" id="gender" name="gender" required>
-                                    <option value="">--Please select--</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="doctorName">Doctor Name</label>
-                                <input type="text" class="form-control" id="doctorName" name="doctorName">
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="diagnosis">Diagnosis</label>
-                                <textarea class="form-control" id="diagnosis" name="diagnosis"></textarea>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="prescription">Prescription</label>
-                                <textarea class="form-control" id="prescription" name="prescription"></textarea>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="admissionDate">Admission Date:</label>
-                                <input type="date" class="form-control" id="admissionDate" name="admissionDate" required>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="dischargeDate">Discharge Date:</label>
-                                <input type="date" class="form-control" id="dischargeDate" name="dischargeDate" required>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="roomNumber">Room Number:</label>
-                                <input type="number" class="form-control" id="roomNumber" name="roomNumber" min="1" max="500" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary mx-auto d-block mt-5">Submit</button>
+                          <div class="form-group mb-4">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+                          </div>
+
+                          <div class="form-group mb-4">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob">
+                          </div>
+
+                          <div class="form-group mb-4">
+                            <label for="ssn">Social Security Number</label>
+                            <input type="text" class="form-control" id="ssn" placeholder="Enter your social security number">
+                          </div>
+
+                          <div class="form-group mb-4">
+                            <label for="address">Address</label>
+                            <textarea class="form-control" id="address" rows="3" placeholder="Enter your address"></textarea>
+                          </div>
+
+                          <div class="form-group mb-4">
+                            <label for="policy-number">Policy Number</label>
+                            <input type="text" class="form-control" id="policy-number" placeholder="Enter your policy number">
+                          </div>
+
+                          <div class="form-group mb-4">
+                            <label for="plan-type">Plan Type</label>
+                            <select class="form-control" id="plan-type">
+                              <option>Select a plan type</option>
+                              <option>Individual</option>
+                              <option>Family</option>
+                              <option>Group</option>
+                            </select>
+                          </div>
+
+                          <div class="form-group mb-4">
+                            <label for="insurance-company">Insurance Company</label>
+                            <input type="text" class="form-control" id="insurance-company" placeholder="Enter your insurance company name">
+                          </div>
+                          <button type="submit" class="btn btn-primary mx-auto d-block mt-5">Submit</button>
                         </form>
                     </div>
                 </div>
