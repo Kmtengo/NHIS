@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body id="page-top">
@@ -133,47 +134,65 @@
             </nav>
             <section class="portfolio-block projects-cards">
                 <div class="container">
-                    <div class="col-md-8 col-xl-6 text-center mx-auto"><h2 class="fw-bold">Ask our ChatGPT Powered Chatbot</h2></div>
+                    <div class="col-md-8 col-xl-6 text-center mx-auto"><h2 class="fw-bold">Ask our Llama-3 Powered Chatbot</h2></div>
+                    <br><br>
                     <div class="row d-flex justify-content-center">
                         <div class="text-center">
-                            <input type="text" id="prompt" placeholder="Enter your prompt here">
-                            <button class="btn btn-primary btn-user" onclick="callGPTAPI()">Call ChatGPT API</button>
+                            <label for="prompt"></label><input type="text" id="prompt" placeholder="Enter your prompt here">
+                            <button class="btn btn-primary btn-user" onclick="callLlamaAPI()">Ask NHIS</button>
                         </div>
-                        <div>
-                            <p id="results"></p>
-                        </div>
-                        <script>
-                            const prompt = document.getElementById('prompt');
-                            const results = document.getElementById('results');
+                        <script type="module">
+                            import LlamaAI from './node_modules/llamaai';
 
-                            function callGPTAPI() {
+                            const apiToken = 'LL-le6unFNfWCDwP5XMvXyfpSBCpKFkWOBF4LSwjRfWFHO2r6eMK6ZhZ6O9i8lGcJkT';
+                            const llamaAPI = new LlamaAI(apiToken);
+
+                            async function callLlamaAPI() {
+                                const prompt = document.getElementById('prompt');
+                                const results = document.getElementById('results');
+
                                 const options = {
                                     method: 'POST',
                                     headers: {
-                                        'content-type': 'application/json',
-                                        'X-RapidAPI-Key': '17c4d5329bmshb9efbf79e63ba19p1a201bjsne1542e949b54',
-                                        'X-RapidAPI-Host': 'openai80.p.rapidapi.com'
+                                        'Content-Type': 'application/json',
+                                        'Authorization': `Bearer ${apiToken}`
                                     },
-                                    body: `{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"${prompt.value}"}]}`
+                                    body: JSON.stringify({
+                                        model: 'llama3-70b',
+                                        messages: [
+                                            { role: 'user', content: prompt.value }
+                                        ]
+                                    })
                                 };
 
-                                fetch(
-                                    'https://openai80.p.rapidapi.com/chat/completions',
-                                    options
-                                )
-                                    .then((response) => response.json())
-                                    .then((response) => {
-                                        results.innerText = response.choices[0].message.content;
-                                    })
-                                    .catch((err) => console.error(err));
+                                try {
+                                    const response = await fetch(llamaAPI.endpoint, options);
+                                    const json = await response.json();
+
+                                    const choices = json.choices;
+                                    if (choices && choices.length > 0) {
+                                        results.innerHTML = choices[0].message.content;
+                                    } else {
+                                        results.innerHTML = 'No response from the API';
+                                    }
+                                } catch (error) {
+                                    console.error('Error:', error);
+                                    results.innerHTML = 'An error occurred while fetching the results.';
+                                }
                             }
                         </script>
+                        <div>
+                            <p id="results"></p>
+                        </div>
+
                     </div>
                 </div>
             </section>    
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                        <p><b>Disclaimer: </b>ChatGPT is an AI language model and is not a substitute for professional medical advice, diagnosis, or treatment. The information provided by ChatGPT is for general informational purposes only and should not be relied upon or used as the sole basis for making decisions regarding your health. Always consult a qualified healthcare provider before making any changes to your healthcare regimen.</p>
+                    <div class="text-center my-auto"><h5><b>Disclaimer: </b></h5></div>
+                        <p class="text-center my-auto">Llama-3 is an AI language model and is not a substitute for professional medical advice, diagnosis, or treatment. <br>The information provided by LLama-3 is for general informational purposes only and should not be relied upon or <br>used as the sole basis for making decisions regarding your health.<br> Always consult a qualified healthcare provider before making any changes to your healthcare regimen.</p>
+                    <br><br>
                     <div class="text-center my-auto copyright"><span>Copyright © NHIS 2023</span></div>
                 </div>
             </footer>

@@ -150,3 +150,11 @@ height: 200px;
     font-size: 0.8rem;
 }
 }
+
+
+footer.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999; /* Ensures the footer is above other content */
+}
