@@ -2,7 +2,7 @@
 The **National Health Integrated System** aims to create a harmonized _healthcare management system_ that can be used by all public hospitals across the country and even beyond. The system will bring together critical patient information, such as **medical history**, **lab results** and **prescribed medications** and make it accessible to authorized healthcare providers in _real-time_.
 
 ## Technologies
-The National Health Integrated System is a Web Project which combines web technologies i.e. **HTML**, **CSS** and **Javascript** with Azure cloud technologies like **Azure App Services**, **Azure SQL Database** and **OpenAI chat models** to bring an end to the _fragmented_ and _disjointed_ healthcare system that currently exists in our country.
+The National Health Integrated System is a Web Project which combines web technologies i.e. **HTML**, **CSS** and **Javascript** with Azure cloud technologies like **Azure Static Web Apps**, **Azure SQL Database** and **LlamaAI chat models** to bring an end to the _fragmented_ and _disjointed_ healthcare system that currently exists in our country.
 
 ## Goal
 * The current system is inefficient, with a lack of information sharing between healthcare facilities leading to _duplicated efforts_, _increased costs_, and _potential health risks for patients_.
