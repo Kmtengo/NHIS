@@ -77,7 +77,7 @@
                 console.log(response.data);
                 localStorage.setItem('insuranceCompany', response.data.doctor);
                 localStorage.setItem('insurance_token', response.data.jwt);
-                window.location.href="insurance.html"
+                window.location.href="../views/insurance.html"
             })
             .catch((e)=>{
                 window.location.href="insurance-login.html"

@@ -96,7 +96,7 @@
                 console.log(response.data);
                 localStorage.setItem('patient', response.data.doctor);
                 localStorage.setItem('patient_token', response.data.jwt);
-                window.location.href="patient.html"
+                window.location.href="../views/patient.html"
             })
             .catch((e)=>{
                 window.location.href="patientLogin.html"

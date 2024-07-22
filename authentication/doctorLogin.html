@@ -61,11 +61,11 @@
                 console.log(response.data);
                 localStorage.setItem('doctor', JSON.stringify(response.data.doctor));
                 localStorage.setItem('doctor_token', response.data.jwt);
-                window.location.href="doctor.html"
+                window.location.href="../views/doctor.html"
             })
             .catch((e)=>{
                 // window.location.href="invalidFormInput.html"
-                window.location.href="doctor.html"
+                window.location.href="../views/doctor.html"
 
                 console.log(e);
             })

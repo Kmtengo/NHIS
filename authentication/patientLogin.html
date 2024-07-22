@@ -61,10 +61,10 @@
                 console.log(response.data);
                 localStorage.setItem('patient', JSON.stringify(response.data.patient));
                 localStorage.setItem('patient_token', response.data.jwt);
-                window.location.href="patient.html"
+                window.location.href="../views/patient.html"
             })
             .catch((e)=>{
-                window.location.href="patient.html"
+                window.location.href="../views/patient.html"
                 console.log(e);
             })
         })
