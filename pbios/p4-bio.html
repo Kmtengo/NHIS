@@ -149,7 +149,9 @@
                                             <div class="d-grid gap-2">
                                                 <button type="button" class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/24/FFFFFF/phone--v1.png"/> +(254)754-653-187</button>
                                                 <button type="button" class="btn btn-primary"><img src="https://img.icons8.com/material-rounded/24/FFFFFF/filled-chat.png"/> Chat</button>
-                                                <button type="button" class="btn btn-primary"><img src="https://img.icons8.com/ios-glyphs/24/FFFFFF/phone--v1.png"/> Add Record</button>
+                                                <button id="addRecordButton" type="button" class="btn btn-primary">
+                                                    <img src="https://img.icons8.com/ios-glyphs/24/FFFFFF/phone--v1.png"/> Add Record
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -343,6 +345,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
         <script src="../assets/js/bs-init.js?h=e2b0d57f2c4a9b0d13919304f87f79ae"></script>
         <script src="../assets/js/theme.js?h=79f403485707cf2617c5bc5a2d386bb0"></script>
+        <script>
+            document.getElementById('addRecordButton').addEventListener('click', function() {
+                window.location.href = '../views/docforms.html';
+            });
+        </script>
     </body>
 
 </html>
